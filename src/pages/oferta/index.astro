@@ -1,0 +1,844 @@
+---
+const phoneDisplay = '795 309 108';
+const phoneLink = '+48795309108';
+---
+
+<!doctype html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <title>Wynajem sali na imprezy Łódź | Sala Nad Jasieniem</title>
+
+  <meta
+    name="description"
+    content="Wynajem kameralnej sali na imprezy w Łodzi. Do 33 osób przy samodzielnym wynajmie lub do 45 osób z obsługą i cateringiem. Urodziny, chrzciny, komunie i spotkania rodzinne."
+  />
+
+  <link
+    rel="canonical"
+    href="https://salanadjasieniem.pl/oferta/"
+  />
+
+  <link rel="icon" type="image/png" href="/favicon.png" />
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Nunito+Sans:wght@400;500;600;700;800&display=swap');
+
+    :root {
+      --cream: #f6f2e9;
+      --white: #ffffff;
+      --green: #173e35;
+      --green-light: #24594c;
+      --green-soft: #dce8df;
+      --gold: #c69a5d;
+      --gold-light: #ead6b7;
+      --ink: #20221f;
+      --muted: #6f726d;
+      --border: rgba(23, 62, 53, .13);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      background: var(--cream);
+      color: var(--ink);
+      font-family: 'Nunito Sans', sans-serif;
+      line-height: 1.65;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    .wrap {
+      width: min(1180px, 92%);
+      margin: 0 auto;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(246, 242, 233, .94);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .nav {
+      min-height: 70px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .brand {
+      color: var(--green);
+      font-size: 1.2rem;
+      font-weight: 800;
+      text-decoration: none;
+    }
+
+    .navigation {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+    }
+
+    .navigation a {
+      color: var(--green);
+      font-size: .92rem;
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 14px;
+
+      min-height: 54px;
+      padding: 0 26px;
+
+      border-radius: 14px;
+
+      background: linear-gradient(
+        135deg,
+        #d49a43,
+        #b9782e
+      );
+
+      color: #fffaf2 !important;
+      text-decoration: none;
+      font-weight: 800;
+
+      box-shadow:
+        0 8px 25px rgba(198, 154, 93, .25);
+
+      transition:
+        transform .25s ease,
+        box-shadow .25s ease,
+        filter .25s ease;
+    }
+
+    .button:hover {
+      transform: translateY(-3px);
+      filter: brightness(1.06);
+
+      box-shadow:
+        0 12px 34px rgba(198, 154, 93, .38);
+    }
+
+    .arrow {
+      display: inline-block;
+      font-size: 1.3rem;
+      transition: transform .25s ease;
+    }
+
+    .button:hover .arrow {
+      transform: translateX(6px);
+    }
+
+    .hero {
+      position: relative;
+      overflow: hidden;
+
+      padding: 120px 0 100px;
+
+      background:
+        radial-gradient(
+          circle at 15% 80%,
+          rgba(198,154,93,.18),
+          transparent 35%
+        ),
+        var(--green);
+
+      color: white;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      width: 500px;
+      height: 500px;
+      right: -180px;
+      top: -180px;
+
+      border-radius: 50%;
+
+      background: radial-gradient(
+        circle,
+        rgba(234,214,183,.11),
+        transparent 68%
+      );
+
+      pointer-events: none;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 900px;
+    }
+
+    .eyebrow {
+      color: var(--gold);
+      font-size: .78rem;
+      font-weight: 900;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+    }
+
+    .hero .eyebrow {
+      color: var(--gold-light);
+    }
+
+    h1,
+    h2 {
+      font-family: 'DM Serif Display', Georgia, serif;
+      font-weight: 400;
+      line-height: 1.02;
+      letter-spacing: -.03em;
+    }
+
+    h1 {
+      max-width: 900px;
+      margin: 12px 0 24px;
+      font-size: clamp(3rem, 7vw, 6rem);
+    }
+
+    h2 {
+      margin: 10px 0 25px;
+      color: var(--green);
+      font-size: clamp(2.2rem, 5vw, 4rem);
+    }
+
+    h3 {
+      margin-top: 0;
+      color: var(--green);
+      font-size: 1.4rem;
+    }
+
+    .hero-description,
+    .lead {
+      max-width: 760px;
+      font-size: 1.2rem;
+    }
+
+    .hero-description {
+      margin-bottom: 30px;
+      color: rgba(255,255,255,.84);
+    }
+
+    .lead {
+      color: #494d48;
+    }
+
+    section {
+      padding: 90px 0;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+      margin-top: 40px;
+    }
+
+    .card {
+      padding: 36px;
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 24px;
+
+      box-shadow:
+        0 15px 45px rgba(23,62,53,.04);
+    }
+
+    .card-highlight {
+      background: var(--green-soft);
+    }
+
+    .price {
+      margin-top: 20px;
+      color: var(--gold);
+      font-size: 2.2rem;
+      font-weight: 800;
+    }
+
+    .checklist {
+      padding: 0;
+      margin: 25px 0;
+      list-style: none;
+    }
+
+    .checklist li {
+      margin: 12px 0;
+      font-weight: 650;
+    }
+
+    .checklist li::before {
+      content: "✓";
+      margin-right: 12px;
+      color: var(--gold);
+      font-weight: 900;
+    }
+
+    .occasions {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 12px;
+      margin-top: 35px;
+    }
+
+    .occasion {
+      padding: 25px 16px;
+
+      background: white;
+
+      border: 1px solid var(--border);
+      border-radius: 18px;
+
+      color: var(--green);
+      text-align: center;
+      font-weight: 800;
+    }
+
+    .dark {
+      background: var(--green);
+      color: white;
+    }
+
+    .dark h2 {
+      color: white;
+    }
+
+    .dark .eyebrow {
+      color: var(--gold-light);
+    }
+
+    .price-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+      margin-top: 35px;
+    }
+
+    .price-box {
+      padding: 35px;
+
+      background: rgba(255,255,255,.08);
+
+      border: 1px solid rgba(255,255,255,.16);
+      border-radius: 22px;
+    }
+
+    .price-box h3 {
+      color: white;
+    }
+
+    .price-box p {
+      color: rgba(255,255,255,.76);
+    }
+
+    .price-box .price {
+      color: var(--gold-light);
+      font-size: clamp(2.8rem, 6vw, 4.6rem);
+      line-height: 1;
+    }
+
+    .included {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+      margin-top: 45px;
+    }
+
+    .included div {
+      padding: 17px 0;
+      border-top: 1px solid rgba(255,255,255,.19);
+      font-weight: 700;
+    }
+
+    .faq {
+      max-width: 860px;
+    }
+
+    .faq-item {
+      padding: 22px 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .faq-item h3 {
+      margin-bottom: 7px;
+    }
+
+    .faq-item p {
+      margin-bottom: 0;
+    }
+
+    .cta {
+      position: relative;
+      overflow: hidden;
+      background: var(--green);
+      color: white;
+    }
+
+    .cta::after {
+      content: "";
+
+      position: absolute;
+      width: 600px;
+      height: 600px;
+
+      right: -200px;
+      top: -250px;
+
+      background: radial-gradient(
+        circle,
+        rgba(198,154,93,.25),
+        transparent 68%
+      );
+
+      pointer-events: none;
+    }
+
+    .cta-content {
+      position: relative;
+      z-index: 2;
+    }
+
+    .cta h2 {
+      color: white;
+    }
+
+    .cta .eyebrow {
+      color: var(--gold-light);
+    }
+
+    .phone {
+      display: block;
+
+      margin: 25px 0;
+
+      color: var(--gold-light);
+
+      font-size: clamp(2.5rem, 6vw, 4.5rem);
+      font-weight: 800;
+      text-decoration: none;
+
+      line-height: 1;
+    }
+
+    footer {
+      padding: 35px 0;
+
+      background: #102a23;
+
+      color: rgba(255,255,255,.65);
+    }
+
+    .footer-content {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .footer-brand {
+      color: white;
+      font-weight: 800;
+    }
+
+    .mobile-call {
+      display: none;
+    }
+
+    @media (max-width: 900px) {
+      .occasions {
+        grid-template-columns: repeat(3, 1fr);
+      }
+
+      .included {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 700px) {
+      section {
+        padding: 70px 0;
+      }
+
+      .navigation a:not(.button) {
+        display: none;
+      }
+
+      .grid,
+      .price-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .occasions {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .included {
+        grid-template-columns: 1fr;
+      }
+
+      .footer-content {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .mobile-call {
+        display: block;
+
+        position: fixed;
+        z-index: 200;
+
+        bottom: 14px;
+        left: 4%;
+        right: 4%;
+
+        padding: 12px 16px;
+
+        border-radius: 999px;
+
+        background: #b9823f;
+        color: #fffaf2;
+
+        text-align: center;
+        text-decoration: none;
+        font-size: .95rem;
+        font-weight: 900;
+
+        box-shadow:
+          0 10px 35px rgba(0,0,0,.30);
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <div class="wrap nav">
+
+    <a class="brand" href="/">
+      Sala „Nad Jasieniem”
+    </a>
+
+    <nav class="navigation">
+      <a href="/">Strona główna</a>
+      <a href="/oferta/">Oferta</a>
+
+      <a
+        class="button"
+        href={`tel:${phoneLink}`}
+      >
+        Zadzwoń
+      </a>
+    </nav>
+
+  </div>
+</header>
+
+
+<main>
+
+  <section class="hero">
+    <div class="wrap">
+
+      <div class="hero-content">
+
+        <div class="eyebrow">
+          ✦ OFERTA · SALA NAD JASIENIEM
+        </div>
+
+        <h1>
+          Wynajem sali na imprezy w Łodzi.
+        </h1>
+
+        <p class="hero-description">
+          Kameralna przestrzeń przy al. Politechniki 31.
+          Wynajmij salę na wyłączność dla maksymalnie 33 osób
+          albo powierz nam organizację przyjęcia z obsługą
+          i cateringiem dla maksymalnie 45 osób.
+        </p>
+
+        <a class="button" href={`tel:${phoneLink}`}>
+          <span>Sprawdź wolny termin</span>
+          <span class="arrow">→</span>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+
+  <section>
+    <div class="wrap">
+
+      <div class="eyebrow">
+        DWA WARIANTY
+      </div>
+
+      <h2>Zorganizuj przyjęcie po swojemu.</h2>
+
+      <p class="lead">
+        Wybierz samodzielny wynajem sali albo przyjęcie
+        przygotowane przez nas z obsługą i cateringiem.
+      </p>
+
+      <div class="grid">
+
+        <article class="card">
+          <h3>Wynajem sali</h3>
+
+          <p>
+            Sala na wyłączność dla maksymalnie 33 osób.
+            Możesz skorzystać z własnego cateringu
+            i przygotować przyjęcie według własnego pomysłu.
+          </p>
+
+          <ul class="checklist">
+            <li>8 godzin wynajmu</li>
+            <li>2 dodatkowe godziny na przygotowanie i dekoracje</li>
+            <li>przygotowanie stołów i zastawy</li>
+            <li>sprzątanie po imprezie</li>
+            <li>dostęp do ogródka</li>
+            <li>parking</li>
+          </ul>
+
+          <div class="price">od 1400 zł</div>
+        </article>
+
+
+        <article class="card card-highlight">
+          <h3>Przyjęcie z obsługą</h3>
+
+          <p>
+            Jeśli chcesz ograniczyć organizację po swojej stronie,
+            możesz wybrać przyjęcie z naszą obsługą i cateringiem.
+          </p>
+
+          <ul class="checklist">
+            <li>organizacja przyjęcia do 45 osób</li>
+            <li>obsługa przyjęcia</li>
+            <li>catering</li>
+            <li>przygotowanie sali</li>
+            <li>bez dodatkowej opłaty za wynajem sali</li>
+          </ul>
+
+          <div class="price">od 150 zł / os.</div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+
+  <section>
+    <div class="wrap">
+
+      <div class="eyebrow">NA RÓŻNE OKAZJE</div>
+
+      <h2>Miejsce na wspólne chwile.</h2>
+
+      <div class="occasions">
+        <div class="occasion">Urodziny</div>
+        <div class="occasion">Chrzciny</div>
+        <div class="occasion">Komunie</div>
+        <div class="occasion">Spotkania rodzinne</div>
+        <div class="occasion">Imprezy firmowe</div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <section class="dark">
+    <div class="wrap">
+
+      <div class="eyebrow">CENNIK WYNAJMU</div>
+
+      <h2>Prosto i przejrzyście.</h2>
+
+      <div class="price-grid">
+
+        <article class="price-box">
+          <h3>Piątek / Niedziela</h3>
+
+          <div class="price">
+            1400 zł
+          </div>
+
+          <p>Wynajem sali do 33 osób.</p>
+        </article>
+
+
+        <article class="price-box">
+          <h3>Sobota</h3>
+
+          <div class="price">
+            1600 zł
+          </div>
+
+          <p>Wynajem sali do 33 osób.</p>
+        </article>
+
+      </div>
+
+
+      <div class="included">
+        <div>✓ 8 godzin imprezy</div>
+        <div>✓ 2h na przygotowanie</div>
+        <div>✓ stoły i zastawa</div>
+        <div>✓ sprzątanie</div>
+        <div>✓ sala na wyłączność</div>
+        <div>✓ dostęp do ogródka</div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <section>
+    <div class="wrap faq">
+
+      <div class="eyebrow">
+        NAJCZĘSTSZE PYTANIA
+      </div>
+
+      <h2>Wszystko, co warto wiedzieć.</h2>
+
+
+      <div class="faq-item">
+        <h3>Ile osób mieści sala?</h3>
+
+        <p>
+          Przy samodzielnym wynajmie sala przeznaczona jest
+          dla maksymalnie 33 osób. Przyjęcia organizowane
+          przez nas z obsługą i cateringiem mogą być
+          przygotowane dla maksymalnie 45 osób.
+        </p>
+      </div>
+
+
+      <div class="faq-item">
+        <h3>Na ile godzin wynajmowana jest sala?</h3>
+
+        <p>
+          Wynajem obejmuje 8 godzin imprezy oraz dodatkowe
+          2 godziny na przygotowanie i dekorację sali.
+        </p>
+      </div>
+
+
+      <div class="faq-item">
+        <h3>Czy można mieć własny catering?</h3>
+
+        <p>
+          Tak. Przy samodzielnym wynajmie możesz
+          skorzystać z własnego cateringu.
+        </p>
+      </div>
+
+
+      <div class="faq-item">
+        <h3>Czy sprzątanie jest w cenie?</h3>
+
+        <p>
+          Tak. Sprzątanie po imprezie jest zawarte
+          w cenie wynajmu.
+        </p>
+      </div>
+
+
+      <div class="faq-item">
+        <h3>Czy jest parking i ogródek?</h3>
+
+        <p>
+          Tak. Goście mają dostęp do parkingu oraz ogródka.
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+
+  <section class="cta">
+    <div class="wrap cta-content">
+
+      <div class="eyebrow">REZERWACJA</div>
+
+      <h2>Zapytaj o wolny termin.</h2>
+
+      <p>
+        Podaj datę wydarzenia, rodzaj przyjęcia
+        i orientacyjną liczbę gości.
+      </p>
+
+      <a
+        class="phone"
+        href={`tel:${phoneLink}`}
+      >
+        {phoneDisplay}
+      </a>
+
+      <p>
+        Sala „Nad Jasieniem”<br />
+        Al. Politechniki 31<br />
+        93-557 Łódź
+      </p>
+
+      <a
+        class="button"
+        href={`tel:${phoneLink}`}
+      >
+        <span>Zadzwoń i zapytaj o termin</span>
+        <span class="arrow">→</span>
+      </a>
+
+    </div>
+  </section>
+
+</main>
+
+
+<footer>
+  <div class="wrap footer-content">
+
+    <div class="footer-brand">
+      Sala „Nad Jasieniem”
+    </div>
+
+    <div>
+      © {new Date().getFullYear()} · Łódź
+    </div>
+
+  </div>
+</footer>
+
+
+<a
+  class="mobile-call"
+  href={`tel:${phoneLink}`}
+>
+  Zadzwoń · {phoneDisplay}
+</a>
+
+</body>
+</html>
+    
