@@ -44,6 +44,7 @@ const gallery = [
   />
 
   <style>
+  @import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Nunito+Sans:wght@400;500;600;700;800&display=swap');
     :root {
       --cream: #f6f2e9;
       --cream-dark: #ece5d8;
@@ -73,7 +74,7 @@ const gallery = [
       margin: 0;
       background: var(--cream);
       color: var(--ink);
-      font-family: Inter, Arial, sans-serif;
+      font-family: 'Nunito Sans', sans-serif;
       line-height: 1.65;
     }
 
@@ -121,7 +122,7 @@ const gallery = [
 
       color: var(--green);
 
-      font-family: Georgia, serif;
+      font-family: 'Nunito Sans', sans-serif;
       font-size: 1.25rem;
       font-weight: 700;
     }
@@ -141,34 +142,57 @@ const gallery = [
     /* BUTTONS */
 
     .button {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
 
-      min-height: 50px;
+  min-height: 54px;
+  padding: 0 26px;
 
-      padding: 0 22px;
+  border-radius: 14px;
 
-      border-radius: 999px;
+  background: linear-gradient(
+    135deg,
+    #d49a43,
+    #b9782e
+  );
 
-      background: var(--gold);
-      color: #171713;
+  color: #fffaf2 !important;
 
-      text-decoration: none;
-      font-weight: 800;
+  text-decoration: none;
+  font-weight: 800;
 
-      transition:
-        transform 0.2s ease,
-        box-shadow 0.2s ease,
-        background 0.2s ease;
-    }
+  box-shadow:
+    0 8px 25px rgba(198, 154, 93, 0.28),
+    0 0 25px rgba(198, 154, 93, 0.12);
 
-    .button:hover {
-      transform: translateY(-2px);
+  transition:
+    transform .25s ease,
+    box-shadow .25s ease,
+    filter .25s ease;
+}
 
-      box-shadow:
-        0 10px 30px rgba(198, 154, 93, 0.28);
-    }
+.button:hover {
+  transform: translateY(-3px);
+
+  filter: brightness(1.07);
+
+  box-shadow:
+    0 12px 34px rgba(198, 154, 93, 0.38),
+    0 0 30px rgba(198, 154, 93, 0.20);
+}
+.button-arrow {
+  display: inline-block;
+  font-size: 1.35rem;
+  line-height: 1;
+  transition: transform .25s ease;
+}
+
+.button:hover .button-arrow {
+  transform: translateX(6px);
+}
+
 
     .button-green {
       background: var(--green);
@@ -177,7 +201,7 @@ const gallery = [
 
     .button-light {
       background: white;
-      color: var(--green);
+      color: var(--green) !important;
     }
 
     /* HERO */
@@ -289,7 +313,8 @@ const gallery = [
 
       margin: 0.18em 0;
 
-      font-family: Georgia, serif;
+  font-family: 'DM Serif Display', Georgia, serif;
+  font-weight: 400;
 
       font-size: clamp(3.2rem, 8vw, 7rem);
 
@@ -334,7 +359,8 @@ const gallery = [
 
       color: var(--green);
 
-      font-family: Georgia, serif;
+      font-family: 'DM Serif Display', Georgia, serif;
+  font-weight: 400;
 
       font-size: clamp(2.4rem, 5vw, 4.6rem);
 
@@ -345,7 +371,7 @@ const gallery = [
     h3 {
       color: var(--green);
 
-      font-family: Georgia, serif;
+      font-family: 'Nunito Sans', sans-serif;
 
       font-size: 1.4rem;
     }
@@ -391,7 +417,7 @@ const gallery = [
 
       color: var(--gold);
 
-      font-family: Georgia, serif;
+      font-family: 'Nunito Sans', sans-serif;
       font-size: 2.7rem;
       font-weight: 700;
     }
@@ -440,7 +466,121 @@ const gallery = [
 
       font-weight: 900;
     }
+/* JASIEN WAVE TRANSITION */
 
+.jasien-transition {
+  position: relative;
+  height: 140px;
+  overflow: hidden;
+  background: var(--cream);
+}
+
+.jasien-wave {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.jasien-label {
+  position: absolute;
+  z-index: 3;
+
+  top: 18px;
+  left: 50%;
+  transform: translateX(-50%);
+
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  white-space: nowrap;
+
+  color: var(--green);
+
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.22em;
+}
+
+.jasien-label span {
+  color: var(--gold);
+}
+
+.wave-svg {
+  position: absolute;
+
+  left: 0;
+  right: 0;
+  bottom: 0px;
+
+  width: 100%;
+  height: 100px;
+}
+
+.wave-line {
+  fill: none;
+  stroke-linecap: round;
+}
+
+.wave-line-green {
+  stroke: var(--green);
+  stroke-width: 1.5;
+  opacity: 0.3;
+}
+
+.wave-line-gold {
+  stroke: var(--gold);
+  stroke-width: 1.5;
+  opacity: 0.65;
+
+  stroke-dasharray: 7 9;
+
+  animation: waveFlow 9s linear infinite;
+}
+
+@keyframes waveFlow {
+  to {
+    stroke-dashoffset: -130;
+  }
+}
+
+.wave-dot {
+  position: absolute;
+
+  left: 50%;
+  bottom: 39px;
+
+  width: 8px;
+  height: 8px;
+
+  border-radius: 50%;
+
+  background: var(--gold);
+
+  box-shadow:
+    0 0 8px rgba(198,154,93,.85),
+    0 0 20px rgba(198,154,93,.45);
+
+  animation: waterLight 5s ease-in-out infinite;
+}
+
+@keyframes waterLight {
+
+  0% {
+    transform: translateX(-140px) scale(.8);
+    opacity: .3;
+  }
+
+  50% {
+    transform: translateX(140px) scale(1.25);
+    opacity: 1;
+  }
+
+  100% {
+    transform: translateX(-140px) scale(.8);
+    opacity: .3;
+  }
+}
     /* PRICE SECTION */
 
     .pricing {
@@ -482,7 +622,7 @@ const gallery = [
 
       color: var(--gold-light);
 
-      font-family: Georgia, serif;
+      font-family: 'Nunito Sans', sans-serif;
 
       font-size: clamp(3rem, 7vw, 5rem);
 
@@ -645,9 +785,9 @@ const gallery = [
 
       text-decoration: none;
 
-      font-family: Georgia, serif;
+      font-family: 'Nunito Sans', sans-serif;
 
-      font-size: clamp(2.8rem, 8vw, 6rem);
+      font-size: clamp(2.6rem, 6vw, 4.5rem);
 
       font-weight: 700;
 
@@ -661,6 +801,33 @@ const gallery = [
 
       color: rgba(255,255,255,.65);
     }
+    .footer-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 25px;
+}
+
+.footer-brand {
+  font-family: 'Nunito Sans', sans-serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: white;
+}
+
+.footer-meta {
+  font-size: 0.78rem;
+  letter-spacing: 0.04em;
+  color: rgba(255,255,255,.55);
+}
+
+.designer {
+  color: var(--gold-light);
+}
+
+.footer-dot {
+  margin: 0 6px;
+}
 
     .mobile-call {
       display: none;
@@ -735,8 +902,8 @@ const gallery = [
 
         border-radius: 999px;
 
-        background: var(--gold);
-        color: #171713;
+        background: #b9823f;
+        color: #fffaf2 !important;
 
         text-align: center;
         text-decoration: none;
@@ -746,7 +913,23 @@ const gallery = [
         box-shadow:
           0 10px 35px rgba(0,0,0,.30);
       }
+.jasien-transition {
+  height: 135px;
+}
 
+.jasien-label {
+  top: 18px;
+  font-size: 0.65rem;
+}
+
+.wave-svg {
+  height: 95px;
+  bottom: 8px;
+}
+
+.wave-dot {
+  bottom: 44px;
+}
     }
   </style>
 </head>
@@ -757,7 +940,7 @@ const gallery = [
   <div class="wrap nav">
 
     <a href="#top" class="brand">
-      Nad Jasieniem
+      Sala "Nad Jasieniem"
     </a>
 
     <nav class="navigation">
@@ -823,12 +1006,13 @@ const gallery = [
 
         <div class="hero-buttons">
 
-          <a
-            class="button"
-            href={`tel:${phoneLink}`}
-          >
-            Sprawdź wolny termin
-          </a>
+<a
+  class="button"
+  href={`tel:${phoneLink}`}
+>
+  <span>Sprawdź wolny termin</span>
+  <span class="button-arrow">→</span>
+</a>
 
           <a
             class="button button-light"
@@ -1015,6 +1199,37 @@ const gallery = [
 
 
   <!-- PRICING -->
+    <!-- JASIEN WAVE -->
+
+  <div class="jasien-transition">
+    <div class="jasien-wave">
+
+      <div class="jasien-label">
+        <span>✦</span>
+        NAD JASIENIEM
+      </div>
+
+      <svg
+        class="wave-svg"
+        viewBox="0 0 1200 160"
+        preserveAspectRatio="none"
+        aria-hidden="true"
+      >
+        <path
+          class="wave-line wave-line-green"
+          d="M0,85 C180,20 330,145 510,80 C700,10 840,145 1200,65"
+        />
+
+        <path
+          class="wave-line wave-line-gold"
+          d="M0,105 C210,45 360,135 550,95 C760,45 930,125 1200,90"
+        />
+      </svg>
+
+      <div class="wave-dot"></div>
+
+    </div>
+  </div>
 
   <section
     class="pricing"
@@ -1157,7 +1372,7 @@ const gallery = [
           </p>
 
           <strong>
-            od 160 zł / os.
+            od 150 zł / os.
           </strong>
 
         </article>
@@ -1206,7 +1421,7 @@ const gallery = [
       </div>
 
       <h2>
-        Zobacz Nad Jasieniem.
+        Tu zaczynają się wspólne chwile.
       </h2>
 
       <div class="gallery">
@@ -1276,12 +1491,13 @@ const gallery = [
           93-557 Łódź
         </p>
 
-        <a
-          class="button"
-          href={`tel:${phoneLink}`}
-        >
-          Zadzwoń i zapytaj o termin
-        </a>
+<a
+  class="button"
+  href={`tel:${phoneLink}`}
+>
+  <span>Zadzwoń i zapytaj o termin</span>
+  <span class="button-arrow">→</span>
+</a>
 
       </div>
 
@@ -1293,11 +1509,20 @@ const gallery = [
 
 
 <footer>
+  <div class="wrap footer-content">
 
-  <div class="wrap">
-    Sala „Nad Jasieniem” · Łódź
+    <div class="footer-brand">
+      Sala „Nad Jasieniem”
+    </div>
+
+    <div class="footer-meta">
+      © 2025 · Łódź
+      <span class="footer-dot">·</span>
+      Designed & built by
+      <span class="designer"> GeorgEudezet</span>
+    </div>
+
   </div>
-
 </footer>
 
 
